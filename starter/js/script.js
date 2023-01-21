@@ -5,19 +5,21 @@ setInterval(
     }, 1000);
 
     // Dom element of textarea
-let hourNine = $("09");
-let hourTen = $("10");
-let hourEleven = $("11");
-let hourTweleve = $("12");
-let hourOne = $("01");
-let hourTwo = $("02");
-let hourThree = $("03");
-let hourFour = $("04");
-let hourFive = $("05");
+let hourNine = $("#09");
+let hourTen = $("#10");
+let hourEleven = $("#11");
+let hourTweleve = $("#12");
+let hourOne = $("#01");
+let hourTwo = $("#02");
+let hourThree = $("#03");
+let hourFour = $("#04");
+let hourFive = $("#05");
 
 // array element of the dom element of textarea
 let hourlyTime = [hourNine, hourTen, hourEleven, hourTweleve, hourOne, hourTwo, hourThree, hourFour, hourFive];
-let specificHour = parseInt(moment().format());
+let specificHour = parseInt(moment().format("hh"));
+
+
 
 
 
