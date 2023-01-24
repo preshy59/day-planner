@@ -1,6 +1,6 @@
 setInterval(
     function () {
-        $("#currentDay").text(moment().format("DDD MMM, YYYY hh:mm:ss"))
+        $("#currentDay").text(moment().format("DDD MMM, YYYY HH:mm:ss"))
 
     }, 1000);
 
@@ -42,26 +42,21 @@ assignColour();
 
 
 //function to submit the text
-function clickSubmit(event) {
-    
-    event.preventDefault();
-    let submit = $(event.currentTarget).parent().siblings("textarea").val();
-    console.log("submit")
-       let save =  $(event.currentTarget).data("hour");
-       console.log("save")
-       localStorage.setItem(" time " + save + submit);
+$("button").on("click",function (event) {
+     event.preventDefault();
+    let submit = $(event.target).siblings("textarea").val();
+    console.log(submit)
+       let save =  $(event.target).data("hour");
+       console.log(save)
+       localStorage.setItem("hourlyTime " + save, submit);
        
-}
+})
 function storeInput(){
 
-    for(let i=0; i<localStorage.length; i++) {
-        let key = localStorage.key(i);
-        (`${key}: ${localStorage.getItem("time" + key.data("hour"))}`);
+    for(let key of hourlyTime) {
+       
+        key.val(localStorage.getItem("hourlyTime" + key.data("hour")));
       }
-// for (let i = 0; i < hourlyTime.length; i++) {
-//     const hourlyTimes = hourlyTime[i];
-//    hourlyTimes.val( localStorage.getItem("time " + hourlyTimes.data("hour")));
-// }
-    
+   
 }
 storeInput();
