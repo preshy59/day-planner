@@ -5,7 +5,7 @@ setInterval(
     }, 1000);
 
     // Dom element of textarea
-let hourNine = $("#09");
+let hourNine = $("#9");
 let hourTen = $("#10");
 let hourEleven = $("#11");
 let hourTweleve = $("#12");
@@ -53,9 +53,15 @@ $("button").on("click",function (event) {
 })
 function storeInput(){
 
-    for(let key of hourlyTime) {
+    for (let index = 9; index < 18; index++) {
+        
+        const value = localStorage.getItem(`hourlyTime ${index}`);
+        if (value) {
+            let currentHour = $(`[data-hour = ${index}]`);
+            currentHour.val(value);
+            console.log(value);
+        }
        
-        key.val(localStorage.getItem("hourlyTime" + key.data("hour")));
       }
    
 }

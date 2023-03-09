@@ -26,7 +26,7 @@ To get a local copy up and running follow these simple example steps.
 ## Usage
 Each row of the day planner displays a specific hour that showcase wheter the  time has past or it's the present or future time and what is expect to do within the time.
 
-./images/day_planner.png
+../images/day_planner.png
 
 <!-- CONTRIBUTING -->
 ## Contributing
